@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Presentation created using reveal.js: https://github.com/hakimel/reveal.js -->
+    <!-- Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se -->
+
+    <title>Ionic Framework by Rizky Ariestiyansyah</title>
+
+    <meta name="description" content="Seminar ionic oleh Rizky Ariestiyansyah">
+    <meta name="author" content="https://twitter.com/ariestiyansyah">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/ionic.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44023830-1', 'ionicframework.com');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+
+      <section>
+      <p>Membuat Aplikasi mobile HTML5 (ionic)</p></br></br>
+        <blockquote>
+            by &ldquo;Rizky Ariestiyansyah&rdquo;</br></br>
+            <p>Seminar Make your own Android at Sekolah Tinggi Manajemen Industri</p></br>
+
+            <p>Jakarta, 30 Oktober 2014</p>
+          </blockquote>
+      </section>
+
+      <section>
+          <blockquote>
+            &ldquo;Ingin membuat aplikasi mobile?&rdquo;
+          </blockquote>
+        </section>
+
+        <section>
+          <h3>Banyak Platform. Banyak Masalah.</h3>
+          <p style="margin-top: 60px">
+            <img src="img/apple.png" class="logo" width="210" height="210" style="margin-right: 15px">
+            <img src="img/android.png" class="logo" width="210" height="210" style="margin-left: 15px; margin-right: 15px">
+            <img src="img/windows.png" class="logo" width="210" height="210" style="margin-left: 15px; margin-right: 15px">
+            <img src="img/firefoxos.png" class="logo" width="210" height="210" style="margin-left: 15px;">
+          </p>
+          <p><span class="light-text">
+            Kenapa kita masih koding untuk <i>multiple platform</i>?
+          </span></p>
+        </section>
+
+        <section>
+          <h2>Koding dengan Native</h2>
+          <ul>
+            <li>Wajib menguasai semua platform</li>
+            <li>Basis kode yang terpisah</li>
+            <li>Waktu &amp; dan pengembangan yang mahal</li>
+            <li>Pengembangan semakin berkurang</li>
+          </ul>
+        </section>
+
+        <section>
+          <blockquote>
+            &ldquo;Apa yang kita butuhkan untuk membuat aplikasi yang mendukung berbagai platform?&rdquo;
+          </blockquote>
+        </section>
+
+
+        <section>
+          <h4>Anda butuh teknologi web yang <i>cool</i></h4>
+          <div style="margin-top: 70px">
+            <img src="img/html.png" class="logo" width="185" height="260">
+            <img src="img/css.png" class="logo" width="185" height="260" style="margin-left: 80px; margin-right: 80px;">
+            <img src="img/js.png" class="logo" width="185" height="260">
+          </div>
+        </section>
+
+        <section>
+          <h2>Teknologi Hybrid Apps!</h2>
+          <ul>
+            <li>HTML5 yang berjalan seperti <i>native</i></li>
+            <li>Web yang menjadi <i>native layer</i></li>
+            <li>Platform Independent (iOS, Androird, Web, Firefox OS)</li>
+            <li>Akses langsung ke native APIs Cordova</li>
+            <li>Cordova/Phonegap</li>
+            <li>Pengembangan yang cepat (apalagi yang familiar dengan web dev)</li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="img/myboy.jpg">
+        </section>
+
+
+        <section>
+          <h4>OK! Ini bukan tahun 2004 lagi</h4>
+          <p><span class="light-text">Perangkat mobile berkembang sangat cepat</span></p>
+        </section>
+
+        <section>
+          <blockquote>
+            &ldquo;Cordova, AngularJS dan Ionic&rdquo;
+          </blockquote>
+        </section>
+
+
+        <section>
+        <img src="img/cordova.png" class="logo">
+          <h4>Cordova adalah platform untuk mengembangkan aplikasi <i>naive</i> menggunakan teknologi web HTML5, CSS dan JavaScript</h4>
+        </section>
+
+        <section>
+          <h5>Platform di Cordova</h5>
+          <ul>
+            <li>Android</li>
+            <li>iOS</li>
+            <li>Amazon Firef OS</li>
+            <li>Firefox OS</li>
+            <li>BlackBerry</li>
+            <li>Bada</li>
+            <li>Ubuntu</li>
+            <li>WebOS</li>
+            <li>Qt</li>
+            <li>Mac OSX</li>
+            <li>Windows Phone 7 & 8</li>
+            <li>Tizen</li>
+            <li>Browser</li>
+          </ul>
+        </section>
+
+        <section>
+          <h5>Plugin di Cordova</h5>
+          <ul>
+            <li>Baterry Status</li>
+            <li>Camera</li>
+            <li>Contact</li>
+            <li>Dialogs</li>
+            <li>Device & Device Orientation</li>
+            <li>Geolocation</li>
+            <li>File Transfer</li>
+            <li>In-App Purchase</li>
+            <li>and more...</li>
+          </ul>
+        </section>
+
+        <section>
+        <img src="img/angularjs.png" class="logo">
+          <h4>AngularJS adalah <i>superheroic javascript MVC (Model, View, Controller) framework</i></h4>
+          <h4>Keistimewaan AngularJS : <i>Directives, Filters, 2-way Data Binding, Services, DI & Testablity</i> </h4>
+        </section>
+
+
+        <section>
+          <img src="img/ionic-logo.png" class="logo" width="296" height="331">
+          <blockquote>
+            &ldquo;Hello.&rdquo;
+          </blockquote>
+        </section>
+
+
+        <section>
+          <img src="img/sass-icon.png" class="logo" width="210" height="210" style="margin-bottom: 0px">
+          <h2>CSS Generated By Sass</h2>
+          <ul>
+            <li>Tatap muka yang mengagumkan</li>
+            <li>CSS dirancang agar mudah dirubah atau dimodifikasi</li>
+            <li>Menimpa <code>ionic.css</code> atau Sass Preprocessor</li>
+            <li>Stand-alone CSS (independent of Ionic's JavaScript)
+          </ul>
+        </section>
+
+
+        <section>
+          <img src="img/performance-icon.png" class="logo" width="210" height="210" style="margin-bottom: 0px">
+          <h2>Performance Obsessed</h2>
+            <ul>
+              <li><i>Hardware accelerated animations</i></li>
+              <li><i>Minimal DOM Manipulation</i></li>
+              <li><i>Zero jQuery</i> (Masih bisa digunakan jika ingin)</li>
+            </ul>
+        </section>
+
+
+        <section>
+          <img src="img/native-icon.png" class="logo" width="210" height="210" style="margin-bottom: 0px">
+          <h2>Native Suppport </h2>
+          <ul>
+            <li>Modeled off of native SDKs</li>
+            <li>Dapat berjalan dengan Cordova/Phonegap</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <img src="img/design-icon.png" class="logo" width="210" height="210" style="margin-bottom: 0px">
+          <h2>Beautifully Designed</h2>
+          <ul>
+            <li>Cohesive visual system</li>
+            <li>Sederhana dan Mengagumkan</li>
+            <li>Mudah dirubah</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Bekerja disemua resolusi</h4>
+          <img src="img/layar.png" class="logo">
+        </section>
+
+
+        <section>
+          <h2>Ionicons</h2>
+          <img src="img/ionicons.png" class="logo" width="655" height="436">
+          <p>Lebih dari 600 font-icon dengan MIT licensed </p>
+          <p><a href="http://ionicons.com/" target="_blank">ionicons.com</a></p>
+        </section>
+
+
+        <section>
+          <div class="col preview">
+            <img src="img/list-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Lists</h2>
+          <pre><code data-trim contenteditable class="xml">
+<div class="list">
+
+  <div class="item item-divider">
+    Candy Bars
+  </div>
+
+  <a class="item" href="#">
+    Butterfinger
+  </a>
+
+  <a class="item" href="#">
+    Kit Kat
+  </a>
+
+  ...
+
+</div></code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div class="col preview">
+            <img src="img/list-complex-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Complex Lists</h2>
+            <ul style="margin-left: 70px">
+              <li>AngularJS Directive</li>
+              <li>Buttons exposed by swiping</li>
+              <li>Reorder</li>
+              <li>Delete</li>
+            </ul>
+            <pre><code data-trim contenteditable class="xml">
+<ion-list>
+  <ion-item ng-repeat="item in items"
+            class="item-thumbnail-left">
+    <img ng-src="{{ item.pic }}">
+    <h2>{{ item.name }}</h2>
+    <p>{{ item.quote }}</p>
+  </ion-item>
+</ion-list></code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div class="">
+            <h2>Collection Repeat</h2>
+            <ul style="margin-left: 70px">
+              <li>Similar to Angular's <code>ng-repeat</code></li>
+              <li>Scroll through thousands of items</li>
+              <li>Only renders the viewable items</li>
+              <li>Smooth jank-free scrolling</li>
+              <li>Low memory footprint</li>
+            </ul>
+            <pre><code data-trim contenteditable class="xml">
+<div class="list">
+  <div collection-repeat="c in contacts" class="item">
+    <h2>{{ c.name }}</h2>
+    <p>{{ c.email }}</p>
+  </div>
+</div></code></pre>
+          </div>
+        </section>
+
+        <section>
+          <div class="col preview">
+            <img src="img/tabs-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Tabs</h2>
+            <ul style="margin-left: 70px">
+              <li>Nested views</li>
+              <li>Each tab has its own nav history</li>
+            </ul>
+            <pre><code data-trim contenteditable class="xml">
+<ion-tabs class="tabs-icon-only">
+
+  <ion-tab title="Home" icon="ion-star">
+    <ion-nav-view></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Feedback" icon="ion-thumbsdown">
+    <ion-nav-view></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Messages" icon="ion-chatbubble-working">
+    <ion-nav-view></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs></code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div class="col preview">
+            <img src="img/sidemenu-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Side Menu</h2>
+          <pre><code data-trim contenteditable class="xml">
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar></ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-positive">
+      <div class="title">Projects</div>
+    </header>
+    <ion-content has-header="true">
+      <div class="list">
+        <a href="#/work" class="item">Work</a>
+        <a href="#/home" class="item">Home</a>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus></code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div class="col preview">
+            <img src="img/slidebox-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Slide Box</h2>
+          <pre><code data-trim contenteditable class="xml">
+<ion-slide-box on-slide-changed="change(index)">
+  <ion-slide>
+    Slide 1
+  </ion-slide>
+  <ion-slide>
+    Slide 2
+  </ion-slide>
+  <ion-slide>
+    Slide 3
+  </ion-slide>
+</ion-slide-box></code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div class="col preview">
+            <img src="img/actionsheet-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Action Sheet</h2>
+          <pre><code data-trim contenteditable class="js">
+$ionicActionSheet.show({
+  titleText: 'Modify your album',
+  buttons: [
+    { text: 'Share' },
+    { text: 'Move' },
+  ],
+  destructiveText: 'Delete',
+  cancelText: 'Cancel',
+  buttonClicked: function(index) {
+    console.log('BUTTON CLICKED', index);
+    return true;
+  }
+});</code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div class="col preview">
+            <img src="img/pull-refresh-animation.gif" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Pull to Refresh</h2>
+          <pre><code data-trim contenteditable class="xml">
+<ion-content on-refresh="refreshData()">
+  <ion-refresher></ion-refresher>
+  <!-- content -->
+</ion-content></code></pre>
+          </div>
+        </section>
+
+
+        <section>
+          <div class="col preview">
+            <img src="img/navigation-example.png" class="logo" width="380" height="800">
+          </div>
+          <div class="col code">
+            <h2>Navigation</h2>
+            <ul style="margin-left: 70px">
+              <li>Shows back button when possible</li>
+              <li>Each tab has its own history stack</li>
+              <li>Works with Android's back button</li>
+            </ul>
+          <pre><code data-trim contenteditable class="xml">
+<ion-nav-bar>
+  <ion-nav-back-button>
+    Back
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view animation="slide-left-right">
+  <!-- content -->
+</ion-nav-view>
+</code></pre>
+          </div>
+        </section>
+
+
+        <section>
+<pre class="ionic-blue"><code>
+                         $ npm install -g ionic
+
+                          _             _
+                         (_)           (_)
+                          _  ___  _ __  _  ___
+                         | |/ _ \| '_ \| |/ __|
+                         | | (_) | | | | | (__
+                         |_|\___/|_| |_|_|\___|  CLI
+ </code></pre>
+          <ul>
+            <li>Buat proyek secara cepat dengan ionic <i>template</i></li>
+            <li>Boilerplate yang siap dimodifikasi sesuka hati</li>
+            <li><i>Preconfigured tools</i>: Gulp, Sass, Bower, etc.</li>
+            <li>Start a local dev server with LiveReload</li>
+            <li>Update Ionic Framework library files</li>
+            <li>Build and run native apps</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Memasang Ionic dan Cordova</h3>
+          <pre class="ionic-blue" style="font-size:30px"><code>
+            $ npm install -g ionic cordova
+          </code></pre> 
+        </section>
+
+        <section>
+          <div style="margin-top: 70px">
+            <img src="img/blank-template.png" class="logo" width="260" height="260">
+            <img src="img/tabs-template.png" class="logo" width="260" height="260" style="margin-left: 80px; margin-right: 80px;">
+            <img src="img/sidemenu-template.png" class="logo" width="260" height="260">
+          </div>          
+        </section>
+
+        <section>
+          <h3>Clone proyek ionic</h3>
+          <img src="img/clone.png" class="logo">
+        </section>
+
+        <section>
+          <h3><i>Platform, Build </i>dan <i>Emulate</i></h3>
+          <pre class="ionic-blue" style="font-size:30px"><code>
+            $ ionic platform add android
+            $ ionic build android
+            $ ionic emulate android
+            $ ionic run android
+            $ ionic serve
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>LIVE DEMO</h3>
+          <h4>Let's Build</h4>
+        </section>
+
+        <section>
+          <h2><strong>MIT LICENSED</strong></h2>
+          <h6 class="light-text">Free to use (even commercially)</h6>
+        </section>
+
+
+        <section>
+          <h2><strong>COMMUNITY POWERED</strong></h2>
+          <h6 class="light-text">Pengembang aktif di forum dan repo Github</h6>
+        </section>
+
+
+        <section>
+          <h2>Sumber Daya ionic!</h2>
+          <br />
+          <p><strong>Easy-to-follow videos, tutorials and formulas</strong><br />
+          <a href="http://learn.ionicframework.com/" target="_blank"><span class="light-text">learn.ionicframework.com</span></a></p>
+          <br />
+          <p><strong>Visit the Community Forum</strong><br />
+          <a href="http://forum.ionicframework.com/" target="_blank"><span class="light-text">forum.ionicframework.com</span></a></p>
+          <br />
+          <p><strong>Contribute on GitHub</strong><br />
+          <a href="https://github.com/driftyco/ionic" target="_blank"><span class="light-text">github.com/driftyco/ionic</span></a></p>
+        </section>
+
+
+        <section>
+          <h2><code>&lt;/Q&A&gt;</code></h2>
+          <h3>Phone : <a href="tel:087804020496" target="_blank">087804020496</a></h3>
+          <h3>Blog : <a href="http://oonlab.com/" target="_blank">oonlab.com</a></h3>
+          <h3>Twitter : <a href="https://twitter.com/ariestiyansyah" target="_blank">@ariestiyansyah</a></h3>
+          <h3>Email : <a href="mailto:onto@evonestudio.com" target="_blank">onto@evonestudio.com</a></h3>
+        </section>
+
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>
